@@ -1,0 +1,10 @@
+CREATE TRIGGER Delete1
+ON Пацієнт2
+AFTER DELETE 
+AS
+INSERT INTO Пацієнт1
+SELECT *
+FROM DELETED;
+
+DELETE FROM Пацієнт2
+WHERE [Код пацієнта]=5;
